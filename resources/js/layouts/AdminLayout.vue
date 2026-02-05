@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Head, Link, router } from '@inertiajs/vue3';
+import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import { Home, Users, Trophy, Handshake, LogOut, Menu, X, Briefcase } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 interface Props {
     title?: string;
@@ -12,6 +12,8 @@ withDefaults(defineProps<Props>(), {
 });
 
 const sidebarOpen = ref(false);
+const page = usePage();
+const auth = computed(() => page.props.auth as { user?: { name?: string } } | undefined);
 
 const navigation = [
     { name: 'Dashboard', href: '/admin', icon: Home },
@@ -30,7 +32,7 @@ const logout = () => {
     <Head :title="title" />
     <div class="flex min-h-screen bg-gray-100">
         <!-- Sidebar Desktop -->
-        <aside class="hidden w-64 flex-shrink-0 bg-raisin lg:block">
+        <aside class="hidden w-64 shrink-0 bg-raisin lg:block">
             <div class="flex h-full flex-col">
                 <div class="flex h-16 items-center justify-center border-b border-white/10">
                     <Link href="/admin" class="flex items-center gap-2">
@@ -50,6 +52,9 @@ const logout = () => {
                     </Link>
                 </nav>
                 <div class="border-t border-white/10 p-4">
+                    <div v-if="auth?.user?.name" class="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">
+                        {{ auth.user.name }}
+                    </div>
                     <button
                         @click="logout"
                         class="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"

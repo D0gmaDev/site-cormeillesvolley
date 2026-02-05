@@ -12,19 +12,28 @@ class GoogleAuthController extends Controller
 {
     public function redirect(): RedirectResponse
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')
+            ->with(['hd' => 'cormeillesvolley95.fr'])
+            ->redirect();
     }
 
     public function callback(): RedirectResponse
     {
         $googleUser = Socialite::driver('google')->user();
 
-        $user = User::where('email', $googleUser->getEmail())->first();
+        $email = $googleUser->getEmail();
 
-        if (! $user) {
+        if (! str_ends_with($email, '@cormeillesvolley95.fr')) {
             return redirect()->route('admin.login')
-                ->with('error', 'Vous n\'êtes pas autorisé à accéder au backoffice.');
+                ->with('error', 'Vous devez utiliser un compte Google Workspace cormeillesvolley95.fr.');
         }
+
+        $name = trim($googleUser->getName() ?? '');
+
+        $user = User::firstOrCreate(
+            ['email' => $email],
+            ['name' => $name],
+        );
 
         $user->update([
             'google_id' => $googleUser->getId(),

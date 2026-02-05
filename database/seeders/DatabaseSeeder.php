@@ -15,8 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // Admin de test
         User::create([
-            'first_name' => 'Admin',
-            'last_name' => 'Test',
+            'name' => 'Admin Account',
             'email' => 'admin@cormeillesvolley95.fr',
         ]);
 
@@ -96,8 +95,8 @@ class DatabaseSeeder extends Seeder
         $players[2]->roles()->attach($roleTresorier);
 
         // Partenaires
-        Partner::create(['name' => 'Mairie de Cormeilles', 'logo' => 'partners/mairie.png', 'url' => 'https://cormeilles-en-parisis.fr', 'order' => 1]);
-        Partner::create(['name' => 'Sport 2000', 'logo' => 'partners/sport2000.png', 'url' => 'https://sport2000.fr', 'order' => 2]);
-        Partner::create(['name' => 'Décathlon', 'logo' => 'partners/decathlon.png', 'url' => 'https://decathlon.fr', 'order' => 3]);
+        Partner::create(['name' => 'Test 1', 'logo' => 'partners/1.png', 'url' => 'https://google.com', 'order' => 1]);
+        Partner::create(['name' => 'Test 2', 'logo' => 'partners/2.png', 'url' => 'https://google.com', 'order' => 2]);
+        Partner::create(['name' => 'Test 3', 'logo' => 'partners/3.png', 'url' => 'https://google.com', 'order' => 3]);
     }
 }

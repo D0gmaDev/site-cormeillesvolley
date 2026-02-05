@@ -29,15 +29,15 @@ const sections = [
         title: 'Informations',
         links: [
             { name: 'Inscriptions', href: '/informations/inscriptions' },
-            { name: 'Accès aux Gymnases', href: '/informations/acces-gymnases' },
-            { name: 'Horaires Entraînements', href: '/informations/horaires' },
+            { name: 'Accès aux Gymnases', href: '/informations/acces-aux-gymnases' },
+            { name: 'Horaires Entraînements', href: '/informations/horaires-entrainements' },
             { name: 'Contact', href: '/informations/contact' },
         ],
     },
     {
         title: 'Autres',
         links: [
-            { name: 'Partenariat', href: '/partenariat' },
+            { name: 'Partenariat', href: '/partenaires/devenir-notre-partenaire' },
             { name: 'Mentions Légales', href: '/mentions-legales' },
         ],
     },

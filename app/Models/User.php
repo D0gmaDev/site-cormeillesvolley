@@ -10,8 +10,7 @@ class User extends Authenticatable
     use HasFactory;
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'name',
         'email',
         'google_id',
         'avatar',
@@ -20,9 +19,4 @@ class User extends Authenticatable
     protected $hidden = [
         'remember_token',
     ];
-
-    public function getFullNameAttribute(): string
-    {
-        return $this->first_name.' '.$this->last_name;
-    }
 }
