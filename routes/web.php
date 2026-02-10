@@ -57,7 +57,9 @@ Route::prefix('admin')->name('admin.')->middleware([DevAutoLogin::class, 'auth']
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('equipes', AdminTeamController::class)->except(['show']);
+    Route::delete('equipes/{equipe}/photo', [AdminTeamController::class, 'deletePhoto'])->name('equipes.deletePhoto');
     Route::resource('joueurs', PlayerController::class)->except(['show']);
+    Route::delete('joueurs/{joueur}/photo', [PlayerController::class, 'deletePhoto'])->name('joueurs.deletePhoto');
     Route::resource('partenaires', PartnerController::class)->except(['show']);
     Route::resource('bureau', BureauController::class)->except(['show']);
 });

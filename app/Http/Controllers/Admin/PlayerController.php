@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Player;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -96,6 +97,9 @@ class PlayerController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
+            if ($joueur->photo) {
+                Storage::disk('public')->delete($joueur->photo);
+            }
             $validated['photo'] = $request->file('photo')->store('players', 'public');
         }
 
@@ -105,11 +109,25 @@ class PlayerController extends Controller
             ->with('success', 'Joueur mis à jour avec succès.');
     }
 
+    public function deletePhoto(Player $joueur): RedirectResponse
+    {
+        if ($joueur->photo) {
+            Storage::disk('public')->delete($joueur->photo);
+            $joueur->update(['photo' => null]);
+        }
+
+        return redirect()->back()->with('success', 'Photo supprimée.');
+    }
+
     public function destroy(Player $joueur): RedirectResponse
     {
         if ($joueur->teams()->count() > 0) {
             return redirect()->route('admin.joueurs.index')
                 ->with('error', 'Impossible de supprimer un joueur qui appartient à une équipe.');
+        }
+
+        if ($joueur->photo) {
+            Storage::disk('public')->delete($joueur->photo);
         }
 
         $joueur->delete();

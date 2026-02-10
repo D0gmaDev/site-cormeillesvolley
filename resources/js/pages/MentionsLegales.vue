@@ -30,8 +30,8 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
                     <p class="text-gray-600">
                         Amical Club Sportif Cormeilles Volley-Ball<br />
                         Numéro de SIRET : 310 163 241 000 14<br />
-                        Directeur de la publication : Stéphane Alaux<br />
-                        Administrateur : David Marembert<br />
+                        Directeur de la publication : Stéphane Alaux, Président<br />
+                        Administrateur : David Marembert, Responsable Informatique<br />
                         100, rue de Saint Germain 95240 Cormeilles-en-Parisis<br />
                         Téléphone : 01 39 78 42 88<br />
                         Email : contact@cormeillesvolley95.fr<br />

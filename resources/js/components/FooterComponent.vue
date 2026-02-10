@@ -17,6 +17,7 @@ const partners = page.props.partners;
 const usefulLinks = [
     { name: 'Mentions légales', href: '/mentions-legales' },
     { name: 'Plan du site', href: '/plan-du-site' },
+    { name: 'Administration du site', href: '/admin' },
 ];
 </script>
 

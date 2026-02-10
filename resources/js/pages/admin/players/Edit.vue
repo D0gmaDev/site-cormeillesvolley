@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useForm, Link } from '@inertiajs/vue3';
-import { ArrowLeft } from 'lucide-vue-next';
+import { useForm, Link, router } from '@inertiajs/vue3';
+import { ArrowLeft, Upload, Trash2 } from 'lucide-vue-next';
+import { ref } from 'vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -45,6 +46,16 @@ const handlePhotoChange = (e: Event) => {
         form.photo = target.files[0];
     }
 };
+
+const photoInput = ref<HTMLInputElement | null>(null);
+
+const deletePhoto = () => {
+    if (confirm('Supprimer la photo du joueur ?')) {
+        router.delete(`/admin/joueurs/${props.player.id}/photo`, {
+            preserveScroll: true,
+        });
+    }
+};
 </script>
 
 <template>
@@ -84,10 +95,22 @@ const handlePhotoChange = (e: Event) => {
 
                         <div>
                             <Label for="photo">Photo</Label>
-                            <div v-if="player.photo" class="mb-2">
+                            <div v-if="player.photo" class="mb-3 flex items-start gap-4">
                                 <img :src="player.photo_url" alt="Photo actuelle" class="h-24 w-24 rounded-full object-cover" />
+                                <Button type="button" variant="outline" size="sm" class="gap-1.5 text-red-600 hover:bg-red-50 hover:text-red-700" @click="deletePhoto">
+                                    <Trash2 class="h-4 w-4" />
+                                    Supprimer
+                                </Button>
                             </div>
-                            <input id="photo" type="file" accept="image/*" class="mt-1 block w-full text-sm" @change="handlePhotoChange" />
+                            <input ref="photoInput" id="photo" type="file" accept="image/*" class="hidden" @change="handlePhotoChange" />
+                            <button
+                                type="button"
+                                class="inline-flex items-center gap-2 rounded-lg border-2 border-dashed border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:border-cardinal hover:text-cardinal"
+                                @click="photoInput?.click()"
+                            >
+                                <Upload class="h-4 w-4" />
+                                {{ form.photo ? form.photo.name : 'Choisir une photo' }}
+                            </button>
                         </div>
                     </div>
 

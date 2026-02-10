@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useForm, Link } from '@inertiajs/vue3';
-import { ArrowLeft } from 'lucide-vue-next';
+import { ArrowLeft, Upload } from 'lucide-vue-next';
+import { ref } from 'vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -33,6 +34,8 @@ const handlePhotoChange = (e: Event) => {
         form.photo = target.files[0];
     }
 };
+
+const photoInput = ref<HTMLInputElement | null>(null);
 </script>
 
 <template>
@@ -100,12 +103,21 @@ const handlePhotoChange = (e: Event) => {
                     <div>
                         <Label for="photo">Photo d'équipe</Label>
                         <input
+                            ref="photoInput"
                             id="photo"
                             type="file"
                             accept="image/*"
-                            class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:rounded file:border-0 file:bg-cardinal file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-cardinal-dark"
+                            class="hidden"
                             @change="handlePhotoChange"
                         />
+                        <button
+                            type="button"
+                            class="mt-1 inline-flex items-center gap-2 rounded-lg border-2 border-dashed border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:border-cardinal hover:text-cardinal"
+                            @click="photoInput?.click()"
+                        >
+                            <Upload class="h-4 w-4" />
+                            {{ form.photo ? form.photo.name : 'Choisir une photo' }}
+                        </button>
                     </div>
                 </div>
 
