@@ -68,7 +68,7 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
                                 <Users class="h-6 w-6 text-cardinal" />
                             </div>
                             <div class="mb-2 text-4xl font-extrabold text-cardinal">
-                                20+
+                                26+
                             </div>
                             <h3 class="mb-2 text-lg font-bold tracking-wide text-raisin uppercase">
                                 Équipes
@@ -93,7 +93,7 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
                                 <MapPin class="h-6 w-6 text-cardinal" />
                             </div>
                             <div class="mb-2 text-4xl font-extrabold text-cardinal">
-                                400+
+                                450+
                             </div>
                             <h3 class="mb-2 text-lg font-bold tracking-wide text-raisin uppercase">
                                 Adhérents
@@ -118,7 +118,7 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
                                 <Heart class="h-6 w-6 text-cardinal" />
                             </div>
                             <div class="mb-2 text-4xl font-extrabold text-cardinal">
-                                30+
+                                40+
                             </div>
                             <h3 class="mb-2 text-lg font-bold tracking-wide text-raisin uppercase">
                                 Bénévoles
