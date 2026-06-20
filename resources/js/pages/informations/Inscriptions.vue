@@ -4,57 +4,57 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
 const tarifs = [
     {
         categorie: 'Séniors compétition',
-        annee: 'né(e) en 2004 et antérieurement',
-        tarif: '280 €',
+        annee: 'né(e) en 2005 et antérieurement',
+        tarif: '290 €',
     },
     {
         categorie: 'Loisirs compétition / FSGT',
-        annee: 'né(e) en 2004 et antérieurement',
-        tarif: '220 €',
+        annee: 'né(e) en 2005 et antérieurement',
+        tarif: '230 €',
     },
     {
         categorie: 'Loisirs détente',
-        annee: 'né(e) en 2004 et antérieurement',
+        annee: 'né(e) en 2005 et antérieurement',
         tarif: '220 €',
     },
     {
         categorie: 'M21 (-21 ans)',
-        annee: 'né(e) en 2005, 2006 ou 2007',
-        tarif: '250 €',
+        annee: 'né(e) en 2006, 2007 ou 2008',
+        tarif: '260 €',
     },
     {
         categorie: 'M18 (-18 ans)',
-        annee: 'né(e) en 2008, 2009 ou 2010',
-        tarif: '240 €',
+        annee: 'né(e) en 2009, 2010 ou 2011',
+        tarif: '250 €',
     },
     {
         categorie: 'M15 (-15 ans)',
-        annee: 'né(e) en 2011 ou 2012',
-        tarif: '230 €',
+        annee: 'né(e) en 2012 ou 2013',
+        tarif: '240 €',
     },
     {
         categorie: 'M13 (-13 ans)',
-        annee: 'né(e) en 2013 ou 2014',
+        annee: 'né(e) en 2014 ou 2015',
         tarif: '220 €',
     },
     {
         categorie: 'M11 (-11 ans)',
-        annee: 'né(e) en 2015 ou 2016',
+        annee: 'né(e) en 2016 ou 2017',
         tarif: '220 €',
     },
     {
         categorie: 'M9 (-9 ans)',
-        annee: 'né(e) en 2017 ou 2018',
+        annee: 'né(e) en 2018 ou 2019',
         tarif: '190 €',
     },
     {
         categorie: 'Baby Volley M7 (-7 ans)',
-        annee: 'né(e) en 2019 ou 2020',
+        annee: 'né(e) en 2020 ou 2021',
         tarif: '180 €',
     },
     {
         categorie: 'Baby Volley M5 (-5 ans)',
-        annee: 'né(e) en 2021 ou 2022',
+        annee: 'né(e) en 2022 ou 2023',
         tarif: '180 €',
     },
 ];
@@ -98,7 +98,7 @@ const tarifs = [
                                         class="text-2xl font-extrabold tracking-tight text-raisin uppercase"
                                     >
                                         Catégories d’âges et tarifs saison
-                                        2025-2026
+                                        2026-2027
                                     </h2>
                                     <p class="mt-2 text-gray-600">
                                         Retrouvez ci-dessous la catégorie,
@@ -110,7 +110,7 @@ const tarifs = [
                                     <span
                                         class="inline-flex items-center rounded-full bg-cardinal/10 px-4 py-2 text-sm font-semibold text-cardinal ring-1 ring-cardinal/20"
                                     >
-                                        Saison 2025-2026
+                                        Saison 2026-2027
                                     </span>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ const tarifs = [
                                                     scope="col"
                                                     class="px-6 py-4 text-right text-xs font-extrabold tracking-wider text-gray-600 uppercase"
                                                 >
-                                                    Tarif 2025-2026
+                                                    Tarif 2026-2027
                                                 </th>
                                             </tr>
                                         </thead>
@@ -201,7 +201,7 @@ const tarifs = [
                                     inscription appartenant au même foyer, avec
                                     le code
                                     <span class="font-bold text-cardinal"
-                                        >FAMILLE2025</span
+                                        >FAMILLE2026</span
                                     >.
                                 </p>
 
@@ -212,8 +212,8 @@ const tarifs = [
                                         Exemple
                                     </p>
                                     <p class="mt-2 text-gray-700">
-                                        1 frère M21 (250 €) et 1 sœur M15 (230€)
-                                        -> 250€ + (230€ – 20€) = 460€
+                                        1 frère M21 (260 €) et 1 sœur M15 (240€)
+                                        ➔ 260€ + (240€ – 20€) = 480€
                                     </p>
                                 </div>
                             </div>
@@ -267,7 +267,7 @@ const tarifs = [
                                     </p>
                                     <p class="mt-3">
                                         Le certificat médical reste obligatoire
-                                        dans le cadre d’un suclassement (à voir
+                                        dans le cadre d’un surclassement (à voir
                                         au cours de l’année avec l’entraîneur.
                                     </p>
                                 </div>
@@ -282,13 +282,13 @@ const tarifs = [
                                         La cotisation se règle une fois que la
                                         préinscription sur MonClub est validée
                                         par le club avec tous les documents
-                                        confirmes, préférentiellement
+                                        confirmés, préférentiellement
                                         directement sur MonClub (plusieurs
-                                        solutions de paiement proposées), ou
-                                        alors en main propre (pour les
+                                        solutions de paiement sont proposées),
+                                        ou alors en main propre (pour les
                                         Pass’Sport par exemple) lors des
                                         permanences du secrétariat du début
-                                        d’année.
+                                        de saison.
                                     </p>
                                     <p class="mt-3">
                                         La cotisation est due, pleine et
@@ -412,7 +412,7 @@ const tarifs = [
                                     <span
                                         class="text-xl font-extrabold tracking-widest text-white"
                                     >
-                                        FAMILLE2025
+                                        FAMILLE2026
                                     </span>
                                 </div>
                             </div>
